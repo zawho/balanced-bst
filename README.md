@@ -1,1 +1,1 @@
-# balanced-bst
+March 20, 2024 - I am now beginning the balanced binary search tree project as part of The Odin Project's Javascript track. I will create a self-balancing binary search tree with several helpful functions, using concepts I have learned through TOP's computer science section.

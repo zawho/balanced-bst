@@ -1,0 +1,32 @@
+{
+  "name": "balanced-bst",
+  "version": "1.0.0",
+  "description": "March 20, 2024 - I am now beginning the balanced binary search tree project as part of The Odin Project's Javascript track. I will create a self-balancing binary search tree with several helpful functions, using concepts I have learned through TOP's computer science section.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zawho/balanced-bst.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zawho/balanced-bst/issues"
+  },
+  "homepage": "https://github.com/zawho/balanced-bst#readme",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "3.2.5",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
