@@ -14,11 +14,11 @@ class Tree {
 
         const mid = Math.floor((start + end) / 2);
         const treeNode = new Node(arr[mid]);
+        
         treeNode.left = this.buildTree(arr, start, mid - 1);
         treeNode.right = this.buildTree(arr, mid + 1, end);
     
         return treeNode;
-        
     }
 
 }
