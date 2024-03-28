@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tree */ \"./src/tree.js\");\n\n\nconst testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];\nconst testTree = new _tree__WEBPACK_IMPORTED_MODULE_0__[\"default\"](testArr);\n\nconsole.log(testTree);\n\n//# sourceURL=webpack://balanced-bst/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tree */ \"./src/tree.js\");\n\n\nconst testArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst testTree = new _tree__WEBPACK_IMPORTED_MODULE_0__[\"default\"](testArr);\n\nconsole.log(testTree);\n\n//# sourceURL=webpack://balanced-bst/./src/index.js?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _tree_node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tree-node */ \"./src/tree-node.js\");\n\n\nclass Tree {\n\n    constructor(arr) {\n        this.root = null;\n    }\n\n    buildTree(arr) {\n\n    }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tree);\n\n//# sourceURL=webpack://balanced-bst/./src/tree.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _tree_node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tree-node */ \"./src/tree-node.js\");\n\n\nclass Tree {\n\n    constructor(arr) {\n       this.root = this.buildTree(arr, 0, arr.length - 1);\n    }\n\n    buildTree(arr, start, end) {\n\n        if (start > end) {\n            return null;\n        }\n\n        const mid = Math.floor((start + end) / 2);\n        const treeNode = new _tree_node__WEBPACK_IMPORTED_MODULE_0__[\"default\"](arr[mid]);\n        treeNode.left = this.buildTree(arr, start, mid - 1);\n        treeNode.right = this.buildTree(arr, mid + 1, end);\n    \n        return treeNode;\n        \n    }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tree);\n\n//# sourceURL=webpack://balanced-bst/./src/tree.js?");
 
 /***/ })
 
