@@ -36,5 +36,15 @@ function mergeSort(arr) {
     const right = mergeSort(arr.slice(split));
     return merge(left, right);
 }
+
+function removeDuplicates(arr) {
+    const testSet = new Set(arr);
+    const newArr = Array.from(testSet);
+    return newArr;
+}
+
+function sortAndReduce(arr) {
+    return removeDuplicates(mergeSort(arr));
+}
   
-export default mergeSort;
+export default sortAndReduce;

@@ -1,10 +1,9 @@
-import mergeSort from './merge-sort';
 import Node from './tree-node';
 
 class Tree {
 
     constructor(arr) {
-       this.root = this.buildTree(mergeSort(arr), 0, arr.length - 1);
+        this.root = this.buildTree(arr, 0, arr.length - 1);
     }
 
     buildTree(arr, start, end) {
