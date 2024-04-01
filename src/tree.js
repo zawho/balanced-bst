@@ -19,6 +19,22 @@ class Tree {
         return treeNode;
     }
 
+    insert(root, value) {
+        let rootVar = root;
+        if (rootVar === null) {
+            rootVar = new Node(value);
+            return rootVar;
+        }
+
+        if (value < rootVar.node) {
+            rootVar.left = this.insert(rootVar.left, value);
+        } else if (value > rootVar.node) {
+            rootVar.right = this.insert(rootVar.right, value);
+        }
+
+        return rootVar;
+    }
+
 }
 
 export default Tree;
