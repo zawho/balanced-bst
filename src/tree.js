@@ -20,7 +20,9 @@ class Tree {
     }
 
     insert(root, value) {
+
         let rootVar = root;
+
         if (rootVar === null) {
             rootVar = new Node(value);
             return rootVar;
@@ -34,6 +36,29 @@ class Tree {
 
         return rootVar;
     }
+
+    find(root, value) {
+
+        const rootVar = root;
+
+        if (rootVar.node === value) {
+            console.log(rootVar);
+            return rootVar;
+        } 
+        if (rootVar.node !== value && rootVar.left === null && rootVar.right === null) {
+            console.log(`This tree does not contain ${value}.`);
+            return rootVar;
+        }
+
+        if (value < rootVar.node) {
+            rootVar.left = this.find(rootVar.left, value);
+        } else if (value > rootVar.node) {
+            rootVar.right = this.find(rootVar.right, value);
+        }
+        
+        return rootVar;
+    }
+
 
 }
 
