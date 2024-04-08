@@ -19,7 +19,7 @@ class Tree {
         return treeNode;
     }
 
-    insert(root, value) {
+    insertRecursion(root, value) {
 
         let rootVar = root;
 
@@ -29,9 +29,9 @@ class Tree {
         }
 
         if (value < rootVar.node) {
-            rootVar.left = this.insert(rootVar.left, value);
+            rootVar.left = this.insertRecursion(rootVar.left, value);
         } else if (value > rootVar.node) {
-            rootVar.right = this.insert(rootVar.right, value);
+            rootVar.right = this.insertRecursion(rootVar.right, value);
         }
 
         return rootVar;
@@ -66,10 +66,15 @@ class Tree {
         return rootVar;
     }
 
+    insert(value) {
+        this.insertRecursion(this.root, value);
+    }
+
     find(value) {
         this.findRecursion(this.root, value);
     }
 
+    // work on delete func next
 
 }
 
