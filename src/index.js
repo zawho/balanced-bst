@@ -8,8 +8,8 @@ const testTree = new Tree(testArr);
 /* testTree.insert(testTree.root, 2);
 testTree.insert(testTree.root, 10);
 testTree.insert(testTree.root, 50);
-testTree.insert(testTree.root, 700); */
-
-testTree.find(testTree.root, 9);
+testTree.insert(testTree.root, 700);
+testTree.find(67);
+testTree.find(11); */
 
 printTree(testTree.root);
