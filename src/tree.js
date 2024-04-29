@@ -37,6 +37,8 @@ class Tree {
         return rootVar;
     }
 
+    // currently working on debugging the find funcs.
+
     findRecursion(root, value) {
 
         const rootVar = root;
@@ -73,8 +75,6 @@ class Tree {
     find(value) {
         this.findRecursion(this.root, value);
     }
-
-    // work on delete func next
 
 }
 
