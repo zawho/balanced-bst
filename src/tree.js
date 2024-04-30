@@ -37,8 +37,6 @@ class Tree {
         return rootVar;
     }
 
-    // currently working on debugging the find funcs.
-
     findRecursion(root, value) {
 
         const rootVar = root;
@@ -50,22 +48,20 @@ class Tree {
 
         if (rootVar.node !== value && rootVar.left === null && rootVar.right === null ||
             value < rootVar.node && rootVar.left === null || 
-            value > rootVar.node && rootVar.right === null) {
+        value > rootVar.node && rootVar.right === null ) {
             console.log(`This tree does not contain ${value}.`);
             return null;
         }
+
         if (typeof value !== 'number') {
             console.log(`Please enter a number.`);
             return null;
         }
 
         if (value < rootVar.node) {
-            rootVar.left = this.findRecursion(rootVar.left, value);
-        } else if (value > rootVar.node) {
-            rootVar.right = this.findRecursion(rootVar.right, value);
-        }
-        
-        return rootVar;
+            return this.findRecursion(rootVar.left, value);
+        } 
+        return this.findRecursion(rootVar.right, value);
     }
 
     insert(value) {
