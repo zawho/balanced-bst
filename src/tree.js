@@ -67,24 +67,20 @@ class Tree {
     deleteRecursion(root, value) {
         const rootVar = root;
 
-        if (rootVar.right !== null && rootVar.right.node === value && 
-            rootVar.right.left === null && rootVar.right.right === null) {
-            rootVar.right = null;
-            console.log(this.root);
-            return rootVar;
-        }
-
-        if (rootVar.left !== null && rootVar.left.node === value && 
-            rootVar.left.left === null && rootVar.left.right === null) {
-            rootVar.left = null;
-            console.log(this.root);
+        if (rootVar === null) {
             return rootVar;
         }
 
         if (value < rootVar.node) {
-            return this.deleteRecursion(rootVar.left, value);
-        } 
-        return this.deleteRecursion(rootVar.right, value);
+            rootVar.left = this.deleteRecursion(root.left, value);
+        } else if (value > rootVar.node) {
+            rootVar.right = this.deleteRecursion(root.right, value);
+        } else if (rootVar.left === null) {
+            return rootVar.right;
+        } else if (rootVar.right === null) {
+            return rootVar.left;
+        }
+        return rootVar;
     }
 
     insert(value) {
