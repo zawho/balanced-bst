@@ -1,5 +1,15 @@
 import Node from './tree-node';
 
+function findNextBiggest(deletedNode) {
+    let currentNode = deletedNode.right;
+
+    while (currentNode.left !== null) {
+        currentNode = currentNode.left;
+    }
+    console.log(currentNode);
+    return currentNode;
+}
+
 class Tree {
 
     constructor(arr) {
@@ -80,6 +90,8 @@ class Tree {
         } else if (rootVar.right === null) {
             return rootVar.left;
         }
+        // Later: Try to really understand wtf i did up there^
+        
         return rootVar;
     }
 
@@ -88,7 +100,7 @@ class Tree {
     }
 
     find(value) {
-        this.findRecursion(this.root, value);
+        return this.findRecursion(this.root, value);
     }
 
     delete(value) {
