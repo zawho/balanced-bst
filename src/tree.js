@@ -91,6 +91,12 @@ class Tree {
             return rootVar.left;
         }
         // Later: Try to really understand wtf i did up there^
+
+        if (rootVar.node === value && rootVar.left !== null && rootVar.right !== null) {
+            const replaceNode = findNextBiggest(rootVar);
+            replaceNode.left = rootVar.left;
+            return replaceNode;
+        }
         
         return rootVar;
     }

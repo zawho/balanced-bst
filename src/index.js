@@ -12,6 +12,6 @@ testTree.find(67);
 testTree.find(10);
 testTree.find(0); */
 
-// testTree.delete(4);
+// testTree.delete(8);
 
 printTree(testTree.root);
