@@ -94,7 +94,7 @@ class Tree {
             replaceNode.left = rootVar.left;
             return replaceNode;
         }
-        
+        // ^ continue last section for two children nodes after rebalance func.
         return rootVar;
     }
 
@@ -109,6 +109,31 @@ class Tree {
     delete(value) {
         this.deleteRecursion(this.root, value);
     }
+
+    levelOrder() {
+        const rootVar = this.root; 
+        const queue = [];
+        const arr = [];
+
+        if (rootVar === null) {
+            return;
+        }
+
+        queue.push(rootVar.node);
+        queue.push(rootVar.left.node);
+        queue.push(rootVar.right.node);
+
+        while (queue.length > 0) {
+            arr.push(queue.shift());
+        }
+
+        console.log(queue);
+        console.log(arr);
+    }
+
+    /* rebalance() {
+     after all traversal funcs.
+    } */
 
 }
 
