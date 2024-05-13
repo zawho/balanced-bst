@@ -15,8 +15,7 @@ const testTree = new Tree(testArr);
 // testTree.find(0)
 // testTree.delete(8);
 
-testTree.levelOrder();
-
-// testTree.preOrder();
+// console.log(testTree.levelOrder());
+// console.log(testTree.preOrder());
 
 printTree(testTree.root);

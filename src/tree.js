@@ -130,11 +130,22 @@ class Tree {
             }
             arr.push(current.node);
         }
-        console.log(arr);
+        
         return arr;
     }
 
-    
+    preOrder(rootVar = this.root, arr = []) {
+        if (rootVar === null) {
+            return null;
+        }
+        
+        arr.push(rootVar.node);
+
+        this.preOrder(rootVar.left, arr);
+        this.preOrder(rootVar.right, arr);
+
+        return arr;
+    }
 
     /* rebalance() {
      after all traversal funcs.
