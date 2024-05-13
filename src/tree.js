@@ -130,7 +130,7 @@ class Tree {
             }
             arr.push(current.node);
         }
-        
+
         return arr;
     }
 
@@ -143,6 +143,33 @@ class Tree {
 
         this.preOrder(rootVar.left, arr);
         this.preOrder(rootVar.right, arr);
+
+        return arr;
+    }
+
+    inOrder(rootVar = this.root, arr = []) {
+        if (rootVar === null) {
+            return null;
+        }
+        
+        this.inOrder(rootVar.left, arr);
+
+        arr.push(rootVar.node);
+
+        this.inOrder(rootVar.right, arr);
+
+        return arr;
+    }
+
+    postOrder(rootVar = this.root, arr = []) {
+        if (rootVar === null) {
+            return null;
+        }
+
+        this.postOrder(rootVar.left, arr);
+        this.postOrder(rootVar.right, arr);
+
+        arr.push(rootVar.node);
 
         return arr;
     }

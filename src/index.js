@@ -17,5 +17,7 @@ const testTree = new Tree(testArr);
 
 // console.log(testTree.levelOrder());
 // console.log(testTree.preOrder());
+// console.log(testTree.inOrder());
+// console.log(testTree.postOrder());
 
 printTree(testTree.root);
