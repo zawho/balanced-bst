@@ -111,24 +111,27 @@ class Tree {
     }
 
     levelOrder() {
-        const rootVar = this.root; 
+        if (this.root === null) {
+            return null;
+        }
+
         const queue = [];
         const arr = [];
-
-        if (rootVar === null) {
-            return;
-        }
-
-        queue.push(rootVar.node);
-        queue.push(rootVar.left.node);
-        queue.push(rootVar.right.node);
+        
+        queue.push(this.root);
 
         while (queue.length > 0) {
-            arr.push(queue.shift());
+            const test = queue.shift();
+            if (test.left) {
+                queue.push(test.left);
+            }
+            if (test.right) {
+                queue.push(test.right);
+            }
+            arr.push(test.node);
         }
-
-        console.log(queue);
         console.log(arr);
+        return arr;
     }
 
     /* rebalance() {
