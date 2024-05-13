@@ -121,18 +121,20 @@ class Tree {
         queue.push(this.root);
 
         while (queue.length > 0) {
-            const test = queue.shift();
-            if (test.left) {
-                queue.push(test.left);
+            const current = queue.shift();
+            if (current.left) {
+                queue.push(current.left);
             }
-            if (test.right) {
-                queue.push(test.right);
+            if (current.right) {
+                queue.push(current.right);
             }
-            arr.push(test.node);
+            arr.push(current.node);
         }
         console.log(arr);
         return arr;
     }
+
+    
 
     /* rebalance() {
      after all traversal funcs.
