@@ -1,4 +1,5 @@
 import Node from './tree-node';
+import sortAndReduce from './merge-sort';
 
 function findNextBiggest(deletedNode) {
     let currentNode = deletedNode.right;
@@ -156,9 +157,12 @@ class Tree {
         return arr;
     }
 
-    /* rebalance() {
-     after all traversal funcs.
-    } */
+    rebalance() {
+        const newArr = this.levelOrder();
+        const newSortedArr = sortAndReduce(newArr);
+        const newTree = new Tree(newSortedArr);
+        this.root = newTree.root;
+    }
 
 }
 
