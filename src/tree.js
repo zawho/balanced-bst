@@ -28,8 +28,7 @@ class Tree {
         return treeNode;
     }
 
-    insertRecursion(root, value) {
-
+    insert(value, root = this.root) {
         let rootVar = root;
 
         if (rootVar === null) {
@@ -38,18 +37,15 @@ class Tree {
         }
 
         if (value < rootVar.node) {
-            rootVar.left = this.insertRecursion(rootVar.left, value);
+            rootVar.left = this.insert(value, rootVar.left);
         } else if (value > rootVar.node) {
-            rootVar.right = this.insertRecursion(rootVar.right, value);
+            rootVar.right = this.insert(value, rootVar.right);
         }
 
         return rootVar;
     }
 
-    findRecursion(root, value) {
-
-        const rootVar = root;
-
+    find(value, rootVar = this.root) {
         if (rootVar.node === value) {
             console.log(rootVar);
             return rootVar;
@@ -68,12 +64,12 @@ class Tree {
         }
 
         if (value < rootVar.node) {
-            return this.findRecursion(rootVar.left, value);
+            return this.find(value, rootVar.left);
         } 
-        return this.findRecursion(rootVar.right, value);
+        return this.find(value, rootVar.right);
     }
 
-    deleteRecursion(root, value) {
+    delete(value, root = this.root) {
         const rootVar = root;
 
         if (rootVar === null) {
@@ -81,31 +77,19 @@ class Tree {
         }
 
         if (value < rootVar.node) {
-            rootVar.left = this.deleteRecursion(root.left, value);
+            rootVar.left = this.delete(value, rootVar.left);
         } else if (value > rootVar.node) {
-            rootVar.right = this.deleteRecursion(root.right, value);
+            rootVar.right = this.delete(value, rootVar.right);
         } else if (rootVar.left === null) {
             return rootVar.right;
         } else if (rootVar.right === null) {
             return rootVar.left;
         } else {
             rootVar.node = findNextBiggest(rootVar);
-            rootVar.right = this.deleteRecursion(rootVar.right, rootVar.node);
+            rootVar.right = this.delete(rootVar.node, rootVar.right);
         }
     
         return rootVar;
-    }
-
-    insert(value) {
-        this.insertRecursion(this.root, value);
-    }
-
-    find(value) {
-        return this.findRecursion(this.root, value);
-    }
-
-    delete(value) {
-        this.deleteRecursion(this.root, value);
     }
 
     levelOrder() {

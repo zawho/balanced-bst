@@ -13,7 +13,7 @@ const testTree = new Tree(testArr);
 // testTree.find(67);
 // testTree.find(10);
 // testTree.find(0)
-// testTree.delete(8);
+// testTree.delete(67);
 
 // console.log(testTree.levelOrder());
 // console.log(testTree.preOrder());
