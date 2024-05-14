@@ -6,8 +6,7 @@ function findNextBiggest(deletedNode) {
     while (currentNode.left !== null) {
         currentNode = currentNode.left;
     }
-    console.log(currentNode);
-    return currentNode;
+    return currentNode.node;
 }
 
 class Tree {
@@ -86,15 +85,14 @@ class Tree {
         } else if (value > rootVar.node) {
             rootVar.right = this.deleteRecursion(root.right, value);
         } else if (rootVar.left === null) {
-            return rootVar.right; // Later: Try to really understand wtf i did here
+            return rootVar.right;
         } else if (rootVar.right === null) {
             return rootVar.left;
         } else {
-            const replaceNode = findNextBiggest(rootVar);
-            replaceNode.left = rootVar.left;
-            return replaceNode;
+            rootVar.node = findNextBiggest(rootVar);
+            rootVar.right = this.deleteRecursion(rootVar.right, rootVar.node);
         }
-        // ^ continue last section for two children nodes after rebalance func.
+    
         return rootVar;
     }
 
