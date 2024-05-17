@@ -17,6 +17,9 @@ const testTree = new Tree(testArr);
 // testTree.delete(8);
 // testTree.rebalance();
 
+// testTree.height(4);
+console.log(testTree.height(4));
+
 // console.log(testTree.levelOrder());
 // console.log(testTree.preOrder());
 // console.log(testTree.inOrder());

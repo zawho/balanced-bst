@@ -48,7 +48,6 @@ class Tree {
 
     find(value, rootVar = this.root) {
         if (rootVar.node === value) {
-            console.log(rootVar);
             return rootVar;
         } 
 
@@ -155,6 +154,23 @@ class Tree {
         arr.push(rootVar.node);
 
         return arr;
+    }
+
+    height(nodeVar, rootVar = this.find(nodeVar)) {
+        if (rootVar === null) {
+            return 0;
+        }
+
+        const leafHeight = Math.max(this.height(nodeVar, rootVar.left), 
+        this.height(nodeVar, rootVar.right)) + 0;
+        const nodeHeight = Math.max(this.height(nodeVar, rootVar.left), 
+        this.height(nodeVar, rootVar.right)) + 1;
+
+        if (rootVar.left === null && rootVar.right === null) {
+            return leafHeight;
+        }
+
+        return nodeHeight;
     }
 
     rebalance() {
