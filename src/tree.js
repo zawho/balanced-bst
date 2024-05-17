@@ -173,6 +173,21 @@ class Tree {
         return nodeHeight;
     }
 
+    depth(nodeVar, rootVar = this.root) {
+        if (this.find(nodeVar) === null) {
+            return 0;
+        }
+
+        if (rootVar.node === nodeVar) {
+            return 0;
+        }
+
+        if (nodeVar < rootVar.node) {
+            return this.depth(nodeVar, rootVar.left) + 1;
+        } 
+        return this.depth(nodeVar, rootVar.right) + 1;
+    }
+
     rebalance() {
         const newArr = this.levelOrder();
         const newSortedArr = sortAndReduce(newArr);
