@@ -188,6 +188,23 @@ class Tree {
         return this.depth(nodeVar, rootVar.right) + 1;
     }
 
+    isBalanced(rootVar = this.root) {
+        if (rootVar === null) {
+            return true;
+        }
+
+        const leftHeight = this.height(rootVar.node, rootVar.left);
+        const rightHeight = this.height(rootVar.node, rootVar.right);
+        const heightDiff = leftHeight - rightHeight;
+
+        if (heightDiff < 2 && heightDiff > -2) {
+            this.isBalanced(rootVar.left);
+            this.isBalanced(rootVar.right);
+            return true;
+        }
+        return false;
+    }
+
     rebalance() {
         const newArr = this.levelOrder();
         const newSortedArr = sortAndReduce(newArr);
