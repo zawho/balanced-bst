@@ -1,9 +1,12 @@
 import sortAndReduce from './merge-sort';
 import Tree from './tree';
 import printTree from './print';
+import runScript from './script';
 
-const testArr = sortAndReduce([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
-const testTree = new Tree(testArr);
+runScript();
+
+// const testArr = sortAndReduce([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
+// const testTree = new Tree(testArr);
 
 // testTree.insert(10);
 // testTree.insert(14);
@@ -28,4 +31,4 @@ const testTree = new Tree(testArr);
 
 // testTree.rebalance();
 
-printTree(testTree.root);
+// printTree(testTree.root);
