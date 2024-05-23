@@ -211,7 +211,6 @@ class Tree {
         const newTree = new Tree(newSortedArr);
         this.root = newTree.root;
     }
-
 }
 
 export default Tree;
