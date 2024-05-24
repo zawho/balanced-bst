@@ -4,7 +4,7 @@ import printTree from './print';
 
 function getRandArr() {
     const arr = [];
-    const arrLength =  Math.floor((Math.random() * (20 - 10)) + 11);
+    const arrLength =  Math.floor((Math.random() * (15 - 5)) + 6);
 
     for (let i = 0; i < arrLength; i++) {
         const randNum = Math.floor((Math.random() * 100) + 1);
@@ -12,6 +12,13 @@ function getRandArr() {
     }
 
     return arr;
+}
+
+function printOrders(treeVar) {
+    console.log(`Level order: ${treeVar.levelOrder()}`);
+    console.log(`Pre order: ${treeVar.preOrder()}`);
+    console.log(`Post order: ${treeVar.postOrder()}`);
+    console.log(`In order: ${treeVar.inOrder()}`);
 }
 
 function runScript() {
@@ -24,6 +31,8 @@ function runScript() {
     if (newTree.isBalanced) {
         console.log('This tree is balanced.');
     }
+
+    printOrders(newTree);
 }
 
 export default runScript;
