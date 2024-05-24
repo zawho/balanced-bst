@@ -1,1 +1,3 @@
 March 20, 2024 - I am now beginning the balanced binary search tree project as part of The Odin Project's Javascript track. I will create a self-balancing binary search tree with several helpful functions, using concepts I have learned through TOP's computer science section.
+
+May 24, 2024 - I have finished the balanced binary search tree project. This was a lot of fun as I got to really test my understanding of recursion and loops while figuring out various ways to traverse a binary search tree. Writing the deletion function was perhaps the most difficult part, particularly when trying to figure out how to delete a node with two children. I'm really happy with the results and the script I wrote to run various tree functions is very satisfying to run over and over.
