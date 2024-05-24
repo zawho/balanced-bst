@@ -14,6 +14,16 @@ function getRandArr() {
     return arr;
 }
 
+function logBalance(treeVar) {
+    printTree(treeVar.root);
+
+    if (treeVar.isBalanced()) {
+        console.log('This tree is balanced.');
+    } else {
+        console.log('This tree is unbalanced.');
+    }
+}
+
 function printOrders(treeVar) {
     console.log(`Level order: ${treeVar.levelOrder()}`);
     console.log(`Pre order: ${treeVar.preOrder()}`);
@@ -21,17 +31,28 @@ function printOrders(treeVar) {
     console.log(`In order: ${treeVar.inOrder()}`);
 }
 
+function insertBigNums(treeVar) {
+    const numOfInserts = Math.floor((Math.random() * (10 - 5)) + 6);
+
+    for (let i = 0; i < numOfInserts; i++) {
+        const randNum = Math.floor((Math.random() * (1000 - 100)) + 101);
+        treeVar.insert(randNum);
+    }
+}
+
 function runScript() {
     const arr = getRandArr();
     const sortedArr = sortAndReduce(arr);
     const newTree = new Tree(sortedArr);
+    
+    logBalance(newTree);
+    printOrders(newTree);
 
-    printTree(newTree.root);
-
-    if (newTree.isBalanced) {
-        console.log('This tree is balanced.');
-    }
-
+    insertBigNums(newTree);
+    logBalance(newTree);
+    
+    newTree.rebalance();
+    logBalance(newTree);
     printOrders(newTree);
 }
 
